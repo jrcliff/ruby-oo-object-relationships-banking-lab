@@ -18,7 +18,7 @@ class Transfer
 
 
   def execute_transaction
-    if self.valid?  == false && self.status = "complete"
+    if self.valid?  == false or self.status == "complete"
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
     elsif self.valid? == true && sender.balance > self.amount
